@@ -1,5 +1,17 @@
-# Data files - too large for GitHub
+# Data files
 data/
+NRI_Table_Counties/
+tl_2022_us_county/
+*.shp
+*.dbf
+*.shx
+*.prj
+*.cpg
+*.csv
+
+# Mac system files
+.DS_Store
+.AppleDouble
 
 # Virtual environment
 venv/
@@ -7,13 +19,6 @@ venv/
 # Python cache
 __pycache__/
 *.pyc
-*.pyo
 
-# Mac files
-.DS_Store
-
-# Jupyter checkpoints
+# Jupyter
 .ipynb_checkpoints/
-
-# Output files
-outputs/
