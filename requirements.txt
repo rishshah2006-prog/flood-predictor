@@ -1,0 +1,13 @@
+pandas
+geopandas
+numpy
+scikit-learn
+matplotlib
+plotly
+folium
+streamlit
+jupyter
+shapely
+fiona
+pyproj
+openpyxl
