@@ -1,0 +1,19 @@
+# Data files - too large for GitHub
+data/
+
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Mac files
+.DS_Store
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Output files
+outputs/
