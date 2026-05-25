@@ -6,7 +6,7 @@ import pandas as pd
 
 def create_map(gdf, output):
 
-    print("Generating interactive flood risk map...")
+    print("Generating interactive flood risk map")
 
     gdf_map = gdf.copy()
     gdf_map = gdf_map.to_crs("EPSG:4326")
@@ -78,7 +78,7 @@ def create_map(gdf, output):
     os.makedirs(os.path.dirname(output), exist_ok=True)
     m.save(output)
     print(f"Map saved to {output}")
-    print("Open that file in your browser to view the interactive map!")
+    print("Open that file in your browser to view the map!")
 
 
 if __name__ == "__main__":
