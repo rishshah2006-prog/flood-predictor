@@ -4,12 +4,10 @@ import os
 
 def load_data(shapefile, nri_csv, precip_csv):
 
-    print("Loading county shapefile...")
     counties = gpd.read_file(shapefile)
     counties = counties[['GEOID', 'NAME', 'STATEFP', 'geometry']]
     counties = counties.to_crs("EPSG:4326")
 
-    print("Loading FEMA NRI data...")
     nri = pd.read_csv(nri_csv, encoding='latin1', low_memory=False)
     print(nri.columns.tolist())
 
@@ -29,10 +27,9 @@ def load_data(shapefile, nri_csv, precip_csv):
 
     nri['STCOFIPS'] = nri['STCOFIPS'].astype(str).str.zfill(5)
 
-    print("Merging counties with FEMA data...")
+    print("Merging counties with FEMA data")
     merged = counties.merge(nri, left_on='GEOID', right_on='STCOFIPS', how='inner')
 
-    print("Loading NOAA precipitation data...")
     precip = pd.read_csv(precip_csv, encoding='latin1', low_memory=False)
 
     print("Precipitation columns:", precip.columns.tolist())
