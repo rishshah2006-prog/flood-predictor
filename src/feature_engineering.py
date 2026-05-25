@@ -4,7 +4,6 @@ from sklearn.preprocessing import MinMaxScaler
 
 def build_risk_score(gdf):
 
-    print("Building risk score...")
 
     features = ['IFLD_RISKS', 'CFLD_RISKS', 'SOVI_SCORE', 'RESL_SCORE']
 
