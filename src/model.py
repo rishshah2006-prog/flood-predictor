@@ -8,7 +8,6 @@ import os
 
 def train_model(gdf):
 
-    print("Training Random Forest model...")
 
     features = ['IFLD_RISKS', 'CFLD_RISKS', 'SOVI_SCORE', 'RESL_SCORE']
     X = gdf[features].copy()
