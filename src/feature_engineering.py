@@ -15,7 +15,6 @@ def build_risk_score(gdf):
     gdf_scaled = gdf.copy()
     gdf_scaled[features] = scaler.fit_transform(gdf[features])
 
-    # RESL_SCORE is resilience — higher resilience means LOWER risk, so we invert it
     gdf_scaled['flood_risk_score'] = (
         0.40 * gdf_scaled['IFLD_RISKS'] +
         0.25 * gdf_scaled['CFLD_RISKS'] +
@@ -23,7 +22,7 @@ def build_risk_score(gdf):
         0.15 * (1 - gdf_scaled['RESL_SCORE'])
     )
 
-    # Label counties as high risk (1) or low risk (0)
+    # Labelling
     threshold = gdf_scaled['flood_risk_score'].quantile(0.75)
     gdf_scaled['at_risk'] = (gdf_scaled['flood_risk_score'] >= threshold).astype(int)
 
